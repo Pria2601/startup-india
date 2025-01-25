@@ -1,0 +1,44 @@
+.container {
+    text-align: center;
+    padding: 20px;
+  }
+  .addButton {
+    margin: 20px;
+    padding: 10px 20px;
+    background: #0070f3;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .startups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .startupCard {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .startupCard img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  .form input,
+  .form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .form button {
+    padding: 10px 20px;
+    background: #0070f3;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
