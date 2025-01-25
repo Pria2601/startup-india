@@ -138,22 +138,21 @@ export default function Home({ startups: initialStartups }) {
 }
 
 export async function getServerSideProps() {
-  const fs = require('fs');
-  const path = require('path');
-
-  const filePath = path.join(process.cwd(), 'data', 'startups.json');
-  let startups = [];
-  try {
-    const data = fs.readFileSync(filePath, 'utf8');
-    startups = JSON.parse(data);
-  } catch (error) {
-    console.error('Error reading startups.json:', error.message);
+    let startups = [];
+    try {
+      const res = await fetch("http://localhost:3000/api/startups"); // Replace with your live URL
+      if (res.ok) {
+        startups = await res.json();
+      }
+    } catch (error) {
+      console.error("Error fetching startups:", error);
+    }
+  
+    return {
+      props: { startups },
+    };
   }
-
-  return {
-    props: { startups: startups || [] },
-  };
-}
+  
 
 const styles = {
   page: {
