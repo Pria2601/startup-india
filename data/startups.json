@@ -1,23 +1,72 @@
 [
   {
     "id": 1737801332819,
-    "heading": "ertyerdty",
-    "description": "tyuj",
-    "image": "esrdtf",
+    "heading": "Tech Innovators",
+    "description": "A platform providing AI-powered tools to automate business processes.",
+    "image": "https://images.unsplash.com/photo-1536522971133-3b02a7e3ebc6",
     "likes": 5
   },
   {
-    "id": 1737801504884,
-    "heading": "fg",
-    "description": "fghj",
-    "image": "gfhj",
-    "likes": 2
+    "id": 1737801332820,
+    "heading": "Home Chef Delights",
+    "description": "Connecting food enthusiasts with home-based chefs for authentic, homemade meals.",
+    "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2",
+    "likes": 12
   },
   {
-    "id": 3,
-    "heading": "cfgh",
-    "description": "vgh",
-    "image": "fghj",
-    "likes": 1
+    "id": 1737801332821,
+    "heading": "Eco Weaves",
+    "description": "A sustainable handloom brand empowering artisans to sell eco-friendly textiles.",
+    "image": "https://images.unsplash.com/photo-1606326608605-64e8f4b4d8d5",
+    "likes": 8
+  },
+  {
+    "id": 1737801332822,
+    "heading": "FitLife Gadgets",
+    "description": "Offering smart wearables and devices to help monitor fitness and health goals.",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+    "likes": 20
+  },
+  {
+    "id": 1737801332823,
+    "heading": "Artisan Coffee",
+    "description": "Premium coffee sourced directly from local farmers, delivered to your doorstep.",
+    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93",
+    "likes": 18
+  },
+  {
+    "id": 1737801332824,
+    "heading": "Farm Fresh",
+    "description": "Delivering organic fruits and vegetables directly from farmers to your home.",
+    "image": "https://images.unsplash.com/photo-1582515073492-6d91f35661e8",
+    "likes": 15
+  },
+  {
+    "id": 1737801332825,
+    "heading": "Code Mentorship",
+    "description": "A platform connecting aspiring developers with industry experts for guidance.",
+    "image": "https://images.unsplash.com/photo-1593642634367-d91a135587b5",
+    "likes": 10
+  },
+  {
+    "id": 1737801332826,
+    "heading": "Bake Bliss",
+    "description": "A bakery startup specializing in gluten-free and vegan dessert options.",
+    "image": "https://images.unsplash.com/photo-1585238342025-9ce5f08a2046",
+    "likes": 25
+  },
+  {
+    "id": 1737801332827,
+    "heading": "Handcrafted Stories",
+    "description": "Selling curated handcrafted decor items made by local artisans.",
+    "image": "https://images.unsplash.com/photo-1574664209219-e34e6aa16f6c",
+    "likes": 7
+  },
+  {
+    "id": 1737801332828,
+    "heading": "Tech for Good",
+    "description": "Building apps and tools to support NGOs and social causes.",
+    "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0",
+    "likes": 30
   }
 ]
