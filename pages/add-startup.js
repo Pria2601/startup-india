@@ -1,101 +1,66 @@
 import { useState } from "react";
-import Link from "next/link";
 
 export default function AddStartup() {
-  const [heading, setHeading] = useState("");
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({
+    heading: "",
+    description: "",
+    image: "",
+  });
 
-  async function addStartup() {
-    if (!heading || !description || !image) {
-      alert("All fields are required!");
-      return;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch("/api/startups", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    if (response.ok) {
+      alert("Startup added successfully!");
+      setForm({ heading: "", description: "", image: "" });
+    } else {
+      alert("Error adding startup.");
     }
-
-    setLoading(true);
-    const newStartup = {
-      heading,
-      description,
-      image,
-      likes: 0, // Default likes
-    };
-
-    try {
-      const res = await fetch("/api/startups", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newStartup),
-      });
-
-      if (res.ok) {
-        alert("Startup added successfully!");
-        setHeading("");
-        setDescription("");
-        setImage("");
-      } else {
-        alert("Failed to add the startup.");
-      }
-    } catch (error) {
-      console.error("Error adding startup:", error);
-      alert("Something went wrong.");
-    } finally {
-      setLoading(false);
-    }
-  }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-500 via-white to-orange-500 p-10">
-      <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
-        Add Your Startup
-      </h1>
-      <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
-        <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Heading</label>
+    <div style={{ padding: "20px" }}>
+      <h1>Add a New Startup</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Heading:
           <input
             type="text"
-            value={heading}
-            onChange={(e) => setHeading(e.target.value)}
-            className="w-full p-2 border rounded"
-            placeholder="Enter startup name"
+            value={form.heading}
+            onChange={(e) => setForm({ ...form, heading: e.target.value })}
+            required
           />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">
-            Description
-          </label>
+        </label>
+        <br />
+        <label>
+          Description:
           <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className="w-full p-2 border rounded"
-            placeholder="Enter a short description"
+            value={form.description}
+            onChange={(e) => setForm({ ...form, description: e.target.value })}
+            required
           />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Image URL</label>
+        </label>
+        <br />
+        <label>
+          Image URL:
           <input
-            type="text"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-            className="w-full p-2 border rounded"
-            placeholder="Enter an image URL"
+            type="url"
+            value={form.image}
+            onChange={(e) => setForm({ ...form, image: e.target.value })}
+            required
           />
-        </div>
-        <button
-          onClick={addStartup}
-          disabled={loading}
-          className={`w-full py-2 px-4 text-white rounded ${
-            loading ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-700"
-          }`}
-        >
-          {loading ? "Adding..." : "Add Startup"}
-        </button>
-        <Link href="/">
-          <button className="w-full mt-4 py-2 px-4 text-white bg-gray-500 rounded hover:bg-gray-700">
-            Back to Home
-          </button>
-        </Link>
-      </div>
+        </label>
+        <br />
+        <button type="submit">Add Startup</button>
+      </form>
     </div>
   );
 }

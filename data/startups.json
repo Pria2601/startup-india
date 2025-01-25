@@ -18,13 +18,27 @@
     "heading": "cfgh",
     "description": "vgh",
     "image": "fghj",
-    "likes": 2
+    "likes": 7
   },
   {
     "id": 4,
     "heading": "fg",
     "description": "srdtfghysdfgh",
     "image": "sdrdtfgyu",
+    "likes": 0
+  },
+  {
+    "id": 5,
+    "heading": "hi",
+    "description": "hihi",
+    "image": "hihihi",
+    "likes": 0
+  },
+  {
+    "id": 6,
+    "heading": "ho",
+    "description": "hoho",
+    "image": "ho",
     "likes": 0
   }
 ]
